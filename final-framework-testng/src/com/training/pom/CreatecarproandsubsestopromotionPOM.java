@@ -96,5 +96,4 @@ private WebDriver driver;
 		String Expected = this.selecteditems.getText();
 		assertEquals(Actual, Expected);
 	}
-	
 }
