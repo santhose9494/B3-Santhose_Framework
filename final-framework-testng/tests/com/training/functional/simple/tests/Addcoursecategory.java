@@ -1,4 +1,4 @@
-package com.training.functional.tests;
+package com.training.functional.simple.tests;
 
 import static org.testng.Assert.assertEquals;
 
@@ -20,7 +20,7 @@ import com.training.pom.LoginPOM;
 import com.training.utility.DriverFactory;
 import com.training.utility.DriverNames;
 
-public class ELTC_024 {
+public class Addcoursecategory {
  
 	private WebDriver driver;
 	private String baseUrl;

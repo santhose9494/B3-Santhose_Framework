@@ -3,14 +3,14 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.training.functional.tests.Deletecourse_courselist">
+      <class name="com.training.functional.medium.tests.Createtrainingsession">
         <methods>
-          <include name="tearDown"/>
-          <include name="deletecourselist"/>
-          <include name="setUp"/>
+          <include name="createtrainingsession"/>
           <include name="setUpBeforeClass"/>
+          <include name="tearDown"/>
+          <include name="setUp"/>
         </methods>
-      </class> <!-- com.training.functional.tests.Deletecourse_courselist -->
+      </class> <!-- com.training.functional.medium.tests.Createtrainingsession -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

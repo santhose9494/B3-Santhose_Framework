@@ -1,35 +1,31 @@
-package com.training.functional.tests;
+package com.training.functional.medium.tests;
 
-import static org.testng.Assert.assertEquals;
-
+import java.awt.AWTException;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Properties;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import com.training.generics.ScreenShot;
-
+import com.training.pom.CreatecarproandsubsestopromotionPOM;
 import com.training.pom.LoginPOM;
-import com.training.pom.RemovecategoryfromccPOM;
 import com.training.utility.DriverFactory;
 import com.training.utility.DriverNames;
 
-public class ELTC_025 {
+public class Createcareerandpromotion {
  
 	private WebDriver driver;
 	private String baseUrl;
 	private LoginPOM loginPOM;
-	private RemovecategoryfromccPOM removecategoryfromccPOM;
 	private static Properties properties;
 	private ScreenShot screenShot;
-
+	private CreatecarproandsubsestopromotionPOM createcarproandsubsestopromotionPOM;
+  
 	@BeforeClass
 	public static void setUpBeforeClass() throws IOException {
 		properties = new Properties();
@@ -41,7 +37,7 @@ public class ELTC_025 {
 	public void setUp() throws Exception {
 		driver = DriverFactory.getDriver(DriverNames.CHROME);
 		loginPOM = new LoginPOM(driver); 
-		removecategoryfromccPOM = new RemovecategoryfromccPOM(driver);
+		createcarproandsubsestopromotionPOM = new CreatecarproandsubsestopromotionPOM(driver);
 		baseUrl = properties.getProperty("baseURL");
 		screenShot = new ScreenShot(driver); 
 		// open the browser 
@@ -54,31 +50,22 @@ public class ELTC_025 {
 		driver.quit();
 	}
 	@Test
-	public void deletecategory() throws InterruptedException {
+	public void createcareerandpromotion() throws InterruptedException, AWTException {
 		loginPOM.sendUserName("admin");
 		loginPOM.sendPassword("admin@123");
 		loginPOM.clickLoginBtn(); 
 		Thread.sleep(2000);
-		removecategoryfromccPOM.enteradministration();
+		createcarproandsubsestopromotionPOM.carandpromo();
 		Thread.sleep(2000);
-		removecategoryfromccPOM.coursecategorieslink();
-		Thread.sleep(1000);
-		screenShot.captureScreenShot("ELTC_025_SS1");
-		removecategoryfromccPOM.deletecategory();
-		screenShot.captureScreenShot("ELTC_025_SS2");
-		
-        WebElement msg = driver.findElement(By.xpath("//div[@class='alert alert-info']"));
-        String ActualText = msg.getText();
-        String ExpectedText = "Deleted";
-        assertEquals(ActualText,ExpectedText);
-        
-        if(driver.getPageSource().contains("WebILT")){
-        	System.out.println("Category is not removed from the Courses categories list");
-        	}else{
-        	System.out.println("Category is successfully removed from Courses categories list");
-        	}
-      
-        
+		createcarproandsubsestopromotionPOM.createcareer();
+		Thread.sleep(2000);
+		createcarproandsubsestopromotionPOM.carandpromo();
+		Thread.sleep(2000);
+		createcarproandsubsestopromotionPOM.createpromo();
+		Thread.sleep(2000);
+		createcarproandsubsestopromotionPOM.selectsessions();
+		Thread.sleep(2000);
 	}	
+	
 	
 }

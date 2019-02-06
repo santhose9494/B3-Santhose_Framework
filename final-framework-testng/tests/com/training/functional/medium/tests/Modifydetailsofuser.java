@@ -1,4 +1,4 @@
-package com.training.functional.tests;
+package com.training.functional.medium.tests;
 
 import static org.testng.Assert.assertEquals;
 
@@ -6,28 +6,27 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Properties;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import com.training.generics.ScreenShot;
-import com.training.pom.AddcoursetouserPOM;
 import com.training.pom.LoginPOM;
+import com.training.pom.ModifydetailsofuserPOM;
 import com.training.utility.DriverFactory;
 import com.training.utility.DriverNames;
 
-public class ELTC_023 {
+public class Modifydetailsofuser {
+	
 	private WebDriver driver;
 	private String baseUrl;
 	private LoginPOM loginPOM;
-	private AddcoursetouserPOM addcoursetouserPOM;
 	private static Properties properties;
 	private ScreenShot screenShot;
-
+	private ModifydetailsofuserPOM modifydetailsofuserPOM;
+  
 	@BeforeClass
 	public static void setUpBeforeClass() throws IOException {
 		properties = new Properties();
@@ -39,7 +38,7 @@ public class ELTC_023 {
 	public void setUp() throws Exception {
 		driver = DriverFactory.getDriver(DriverNames.CHROME);
 		loginPOM = new LoginPOM(driver); 
-		addcoursetouserPOM = new AddcoursetouserPOM(driver);
+		modifydetailsofuserPOM = new ModifydetailsofuserPOM(driver);
 		baseUrl = properties.getProperty("baseURL");
 		screenShot = new ScreenShot(driver); 
 		// open the browser 
@@ -52,33 +51,36 @@ public class ELTC_023 {
 		driver.quit();
 	}
 	@Test
-	public void addcoursefortheuser() throws InterruptedException {
+	public void modifyuserdetails() throws InterruptedException {
 		loginPOM.sendUserName("admin");
 		loginPOM.sendPassword("admin@123");
 		loginPOM.clickLoginBtn(); 
+		Thread.sleep(3000);
+		modifydetailsofuserPOM.enteruserlist();
+		screenShot.captureScreenShot("ELTC_051_SS1");
+		modifydetailsofuserPOM.searchboxentry();
+		screenShot.captureScreenShot("ELTC_051_SS2");
 		Thread.sleep(2000);
-		addcoursetouserPOM.enteradministration();
+		modifydetailsofuserPOM.edituser();
+		screenShot.captureScreenShot("ELTC_051_SS3");
 		Thread.sleep(2000);
-		addcoursetouserPOM.addcourlink();
-		addcoursetouserPOM.selectusers();
-		Thread.sleep(1000);
-		addcoursetouserPOM.selectcourse();
-		screenShot.captureScreenShot("ELTC_023_SS1");
-		Thread.sleep(1000);
-		addcoursetouserPOM.addtocoursebuttonclick();
-		Thread.sleep(1000);
-        screenShot.captureScreenShot("ELTC_023_SS2");   
-        
-        WebElement msg = driver.findElement(By.xpath("//div[@class='alert alert-success']"));
-        
-        String ActualText = msg.getText();
-        String ExpectedText = "The selected users are subscribed to the selected course";
-        assertEquals(ActualText,ExpectedText);
-        
-        if(driver.getPageSource().contains("The selected users are subscribed to the selected course")){
-        	System.out.println("Verified Message : The selected users are subscribed to the selected course");
-        	}else{
-        	System.out.println("Message not exist");
-        	}
+		modifydetailsofuserPOM.editmailbox();
+		screenShot.captureScreenShot("ELTC_051_SS4");
+		Thread.sleep(2000);
+		modifydetailsofuserPOM.inactaccount();
+		screenShot.captureScreenShot("ELTC_051_SS5");
+		Thread.sleep(2000);
+		modifydetailsofuserPOM.savedetails();
+		screenShot.captureScreenShot("ELTC_051_SS6");
+		
+		
+		
+		  if(driver.getPageSource().contains("User updated")){
+	        	String Actual = "User updated";
+	        	String Expected = "User updated";
+	        	assertEquals(Actual, Expected);
+	        	}	
+		
 	}	
+	
 }

@@ -1,4 +1,6 @@
-package com.training.functional.tests;
+package com.training.functional.simple.tests;
+
+import static org.testng.Assert.assertEquals;
 
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -11,20 +13,23 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import com.training.generics.ScreenShot;
-import com.training.pom.DeletecourselistPOM;
-import com.training.pom.EntercourselistPOM;
+import com.training.pom.CreatecoursePOM;
 import com.training.pom.LoginPOM;
 import com.training.utility.DriverFactory;
 import com.training.utility.DriverNames;
 
-public class ELTC_021 {
+import common.Assert;
+
+public class Createcourse {
+  
 	private WebDriver driver;
 	private String baseUrl;
 	private LoginPOM loginPOM;
 	private static Properties properties;
 	private ScreenShot screenShot;
-	private EntercourselistPOM entercourselistPOM;
-	private DeletecourselistPOM deletecourselistPOM;
+	private CreatecoursePOM createcoursePOM;
+	String actualString, expectedString;
+	
 
 	@BeforeClass
 	public static void setUpBeforeClass() throws IOException {
@@ -37,8 +42,8 @@ public class ELTC_021 {
 	public void setUp() throws Exception {
 		driver = DriverFactory.getDriver(DriverNames.CHROME);
 		loginPOM = new LoginPOM(driver); 
-		entercourselistPOM = new EntercourselistPOM(driver);
-		deletecourselistPOM = new DeletecourselistPOM(driver);
+		createcoursePOM = new CreatecoursePOM(driver);
+		
 		baseUrl = properties.getProperty("baseURL");
 		screenShot = new ScreenShot(driver); 
 		// open the browser 
@@ -51,21 +56,35 @@ public class ELTC_021 {
 		driver.quit();
 	}
 	@Test
-	public void deletecourselist() throws InterruptedException {
+	public void newcoursecreation() throws InterruptedException {
 		loginPOM.sendUserName("admin");
 		loginPOM.sendPassword("admin@123");
 		loginPOM.clickLoginBtn(); 
 		Thread.sleep(3000);
-		entercourselistPOM.clickcourselist();
-		screenShot.captureScreenShot("ELTC_021_SS1");
-		deletecourselistPOM.deletecourse();
-		screenShot.captureScreenShot("ELTC_021_SS2");    	
+		createcoursePOM.createacoursemeth();
+		createcoursePOM.titletextbox();
+		createcoursePOM.codetextbox();		
+		createcoursePOM.teacherslistbox();		
+		createcoursePOM.categorylistbox();	
+		screenShot.captureScreenShot("ELTC_022_SS1");	
 		
-		  if(driver.getPageSource().contains("11test")){
-	        	System.out.println("Course is not removed properly");
-	        	}else{
-	        	System.out.println("Course removed successfully from the course list");
-	        	}
+		boolean done = driver.getPageSource().contains("Course testing added");
 		
-	}	
+		if (done = true) {
+			System.out.println("Course 'testing' added successfully to the course list");
+		} else {
+			System.out.println("Course not added to the course list");
+		}
+		
+		
+		createcoursePOM.verifycreatedcourse();
+		screenShot.captureScreenShot("ELTC_022_SS2");
+		
+		
+		boolean actual = driver.getPageSource().contains("testing");	
+		boolean expected = true;
+		assertEquals(actual, expected);
+
+	}		
+		
 }
