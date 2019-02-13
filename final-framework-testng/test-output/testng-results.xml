@@ -1,201 +1,81 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="5" passed="5">
+<testng-results skipped="0" failed="0" ignored="0" total="6" passed="6">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="96519" started-at="2019-02-12T08:11:57Z" finished-at="2019-02-12T08:13:34Z">
+  <suite name="Default suite" duration-ms="137013" started-at="2019-02-13T12:26:55Z" finished-at="2019-02-13T12:29:12Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="96519" started-at="2019-02-12T08:11:57Z" finished-at="2019-02-12T08:13:34Z">
-      <class name="com.training.functional.complex.tests.Createmultipleusers_ELTC_081">
-        <test-method status="PASS" signature="setUpBeforeClass()[pri:0, instance:com.training.functional.complex.tests.Createmultipleusers_ELTC_081@1bce4f0a]" name="setUpBeforeClass" is-config="true" duration-ms="37962" started-at="2019-02-12T08:11:57Z" finished-at="2019-02-12T08:12:35Z">
+    <test name="Default test" duration-ms="137013" started-at="2019-02-13T12:26:55Z" finished-at="2019-02-13T12:29:12Z">
+      <class name="com.training.functional.complex.tests.Endtoendforteacherandstud_ELTC_082">
+        <test-method status="PASS" signature="setUpBeforeClass()[pri:0, instance:com.training.functional.complex.tests.Endtoendforteacherandstud_ELTC_082@1bce4f0a]" name="setUpBeforeClass" is-config="true" duration-ms="36390" started-at="2019-02-13T12:26:55Z" finished-at="2019-02-13T12:27:32Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpBeforeClass -->
-        <test-method status="PASS" signature="loginDBTest(java.lang.String, java.lang.String)[pri:1, instance:com.training.functional.complex.tests.Createmultipleusers_ELTC_081@1bce4f0a]" name="loginDBTest" duration-ms="5274" started-at="2019-02-12T08:12:36Z" data-provider="excel-inputs" finished-at="2019-02-12T08:12:41Z">
+        <test-method status="PASS" signature="loginasteacher(java.lang.String, java.lang.String)[pri:1, instance:com.training.functional.complex.tests.Endtoendforteacherandstud_ELTC_082@1bce4f0a]" name="loginasteacher" duration-ms="5064" started-at="2019-02-13T12:27:32Z" data-provider="excel-inputs" finished-at="2019-02-13T12:27:37Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[admin]]>
+                <![CDATA[sannewteach]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA[admin@123]]>
+                <![CDATA[santhose]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- loginDBTest -->
-        <test-method status="PASS" signature="createuser(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:2, instance:com.training.functional.complex.tests.Createmultipleusers_ELTC_081@1bce4f0a]" name="createuser" duration-ms="14072" started-at="2019-02-12T08:12:41Z" data-provider="excel-inputs" finished-at="2019-02-12T08:12:55Z">
+        </test-method> <!-- loginasteacher -->
+        <test-method status="PASS" signature="createtest()[pri:2, instance:com.training.functional.complex.tests.Endtoendforteacherandstud_ELTC_082@1bce4f0a]" name="createtest" duration-ms="43819" started-at="2019-02-13T12:27:37Z" finished-at="2019-02-13T12:28:21Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createtest -->
+        <test-method status="PASS" signature="loginasstudent(java.lang.String, java.lang.String)[pri:3, instance:com.training.functional.complex.tests.Endtoendforteacherandstud_ELTC_082@1bce4f0a]" name="loginasstudent" duration-ms="2456" started-at="2019-02-13T12:28:21Z" data-provider="excel-inputs" finished-at="2019-02-13T12:28:24Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[feb12user1]]>
+                <![CDATA[naveen]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA[feb12last1]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[mail1@gmail.com]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[9876543001]]>
-              </value>
-            </param>
-            <param index="4">
-              <value>
-                <![CDATA[feb12user1]]>
-              </value>
-            </param>
-            <param index="5">
-              <value>
-                <![CDATA[feb12user1]]>
-              </value>
-            </param>
-            <param index="6">
-              <value>
-                <![CDATA[Learner]]>
+                <![CDATA[santhose]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- createuser -->
-        <test-method status="PASS" signature="createuser(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:2, instance:com.training.functional.complex.tests.Createmultipleusers_ELTC_081@1bce4f0a]" name="createuser" duration-ms="12282" started-at="2019-02-12T08:12:55Z" data-provider="excel-inputs" finished-at="2019-02-12T08:13:07Z">
+        </test-method> <!-- loginasstudent -->
+        <test-method status="PASS" signature="taketestasstudent()[pri:4, instance:com.training.functional.complex.tests.Endtoendforteacherandstud_ELTC_082@1bce4f0a]" name="taketestasstudent" duration-ms="26396" started-at="2019-02-13T12:28:24Z" finished-at="2019-02-13T12:28:50Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- taketestasstudent -->
+        <test-method status="PASS" signature="loginagainasteacher(java.lang.String, java.lang.String)[pri:5, instance:com.training.functional.complex.tests.Endtoendforteacherandstud_ELTC_082@1bce4f0a]" name="loginagainasteacher" duration-ms="2422" started-at="2019-02-13T12:28:50Z" data-provider="excel-inputs" finished-at="2019-02-13T12:28:52Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[feb12user2]]>
+                <![CDATA[sannewteach]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA[feb12last2]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[mail2@gmail.com]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[9876543002]]>
-              </value>
-            </param>
-            <param index="4">
-              <value>
-                <![CDATA[feb12user2]]>
-              </value>
-            </param>
-            <param index="5">
-              <value>
-                <![CDATA[feb12user2]]>
-              </value>
-            </param>
-            <param index="6">
-              <value>
-                <![CDATA[Trainer]]>
+                <![CDATA[santhose]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- createuser -->
-        <test-method status="PASS" signature="createuser(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:2, instance:com.training.functional.complex.tests.Createmultipleusers_ELTC_081@1bce4f0a]" name="createuser" duration-ms="12906" started-at="2019-02-12T08:13:07Z" data-provider="excel-inputs" finished-at="2019-02-12T08:13:20Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[feb12user3]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[feb12last3]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[mail3@gmail.com]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[9876543003]]>
-              </value>
-            </param>
-            <param index="4">
-              <value>
-                <![CDATA[feb12user3]]>
-              </value>
-            </param>
-            <param index="5">
-              <value>
-                <![CDATA[feb12user3]]>
-              </value>
-            </param>
-            <param index="6">
-              <value>
-                <![CDATA[Invitee]]>
-              </value>
-            </param>
-          </params>
+        </test-method> <!-- loginagainasteacher -->
+        <test-method status="PASS" signature="generatereportasteacher()[pri:6, instance:com.training.functional.complex.tests.Endtoendforteacherandstud_ELTC_082@1bce4f0a]" name="generatereportasteacher" duration-ms="19077" started-at="2019-02-13T12:28:52Z" finished-at="2019-02-13T12:29:12Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- createuser -->
-        <test-method status="PASS" signature="createuser(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:2, instance:com.training.functional.complex.tests.Createmultipleusers_ELTC_081@1bce4f0a]" name="createuser" duration-ms="12429" started-at="2019-02-12T08:13:20Z" data-provider="excel-inputs" finished-at="2019-02-12T08:13:33Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[feb12user4]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[feb12last4]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[mail4@gmail.com]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[9876543004]]>
-              </value>
-            </param>
-            <param index="4">
-              <value>
-                <![CDATA[feb12user4]]>
-              </value>
-            </param>
-            <param index="5">
-              <value>
-                <![CDATA[feb12user4]]>
-              </value>
-            </param>
-            <param index="6">
-              <value>
-                <![CDATA[Student's superior]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- createuser -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.training.functional.complex.tests.Createmultipleusers_ELTC_081@1bce4f0a]" name="tearDown" is-config="true" duration-ms="819" started-at="2019-02-12T08:13:33Z" finished-at="2019-02-12T08:13:34Z">
+        </test-method> <!-- generatereportasteacher -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.training.functional.complex.tests.Endtoendforteacherandstud_ELTC_082@1bce4f0a]" name="tearDown" is-config="true" duration-ms="728" started-at="2019-02-13T12:29:12Z" finished-at="2019-02-13T12:29:12Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- com.training.functional.complex.tests.Createmultipleusers_ELTC_081 -->
+      </class> <!-- com.training.functional.complex.tests.Endtoendforteacherandstud_ELTC_082 -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
