@@ -1,47 +1,21 @@
 package com.training.pom;
 
-import static org.testng.Assert.assertEquals;
-
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 
-public class ELTC_082POM {
+public class Endtoend_ELTC_082POM {
 
 private WebDriver driver; 
 	
-	public ELTC_082POM(WebDriver driver) {
+	public Endtoend_ELTC_082POM(WebDriver driver) {
 		this.driver = driver; 
 		PageFactory.initElements(driver, this);
 	}
-	
-	@FindBy(xpath="//input[@placeholder='Username']")
-	private WebElement username ;
 		
-	public void username() {
-		this.username.clear();
-		this.username.sendKeys("santeach");
-	}
-	
-	@FindBy(xpath="//input[@id='password']")
-	private WebElement password;
-
-	public void password() {
-		this.password.clear();
-		this.password.sendKeys("santhose");
-	}
-	
-	@FindBy(xpath="//button[@name='submitAuth']")
-	private WebElement login;
-	
-	public void loginasteacher() {
-		this.login.click();
-	}
-		
-	@FindBy(xpath="//a[contains(text(),'Selenium Scripting')]")
+	@FindBy(xpath="//a[contains(text(),'Selenium111')]")
 	private WebElement coursename;
 	
 	public void coursename() {
@@ -55,7 +29,7 @@ private WebDriver driver;
 		this.testicon.click();
 	}
 	
-	@FindBy(xpath="//a[@class='btn btn-primary']")
+	@FindBy(xpath="//img[@title='Create a new test']")
 	private WebElement createnewtest;
 	
 	public void createnewtest() {
@@ -67,7 +41,7 @@ private WebDriver driver;
 	
 	public void entertestname() {
 		this.testname.clear();
-		this.testname.sendKeys("febtest1");
+		this.testname.sendKeys("online quiz");
 	}
 	
 	@FindBy(xpath="//button[@id='advanced_params']")
@@ -77,16 +51,16 @@ private WebDriver driver;
 		this.advanced.click();
 	}
 	
-	@FindBy(xpath="//iframe[@class='cke_wysiwyg_frame cke_reset']")
+	@FindBy(xpath="//iframe[@title='Rich Text Editor, exerciseDescription']")
 	private WebElement frame1;
 	
-	@FindBy(xpath="//body[@class='cke_editable cke_editable_themed cke_contents_ltr cke_show_borders']//p")
+	@FindBy(xpath="//html//body")
 	private WebElement textbox;
 	
-	public void testtextbox() {
+	public void testtextbox() {	
 		driver.switchTo().frame(frame1);
 		this.textbox.clear();
-		this.textbox.sendKeys("testing");
+		this.textbox.sendKeys("quiz");
 		driver.switchTo().defaultContent();
 	}
 	
@@ -97,19 +71,12 @@ private WebDriver driver;
 		this.feedback.click();
 	}
 	
-	@FindBy(xpath="//label[contains(text(),'Enable start time')]")
-	private WebElement enablestarttime;
-	
-	public void enablestarttime() {
-		this.enablestarttime.click();
-	}
-	
 	@FindBy(xpath="//input[@id='pass_percentage']")
 	private WebElement passpercentage;
 	
 	public void enterpasspercentage() {
 		this.passpercentage.clear();
-		this.passpercentage.sendKeys("60");
+		this.passpercentage.sendKeys("50");
 	}
 	
 	@FindBy(xpath="//button[@name='submitExercise']")
@@ -137,19 +104,19 @@ private WebDriver driver;
 	
 	public void addfirstquestion() {
 		this.question.clear();
-		this.question.sendKeys("What is the course name?");
+		this.question.sendKeys("which course your learning");
 	}
 	
 	@FindBy(xpath="//iframe[@title='Rich Text Editor, answer[1]']")
 	private WebElement frame2;
 	
-	@FindBy(xpath="/body[@class='cke_editable cke_editable_themed cke_contents_ltr cke_show_borders']//p")
+	@FindBy(xpath="//body[@class='cke_editable cke_editable_themed cke_contents_ltr cke_show_borders']")
 	private WebElement option1;
 	
 	public void firstquestionfirstoption() {
 		driver.switchTo().frame(frame2);
 		this.option1.clear();
-		this.option1.sendKeys("selenium1");
+		this.option1.sendKeys("selenium");
 		driver.switchTo().defaultContent();
 	}
 	
@@ -162,7 +129,7 @@ private WebDriver driver;
 	public void firstquestionsecondoption() {
 		driver.switchTo().frame(frame3);
 		this.option2.clear();
-		this.option2.sendKeys("abs");
+		this.option2.sendKeys("java");
 		driver.switchTo().defaultContent();
 	}
 	
@@ -175,7 +142,7 @@ private WebDriver driver;
 	public void firstquestionthirdoption() {
 		driver.switchTo().frame(frame4);
 		this.option3.clear();
-		this.option3.sendKeys("3rdoption");
+		this.option3.sendKeys("c");
 		driver.switchTo().defaultContent();
 	}
 	
@@ -188,7 +155,7 @@ private WebDriver driver;
 	public void firstquestionfourthoption() {
 		driver.switchTo().frame(frame5);
 		this.option4.clear();
-		this.option4.sendKeys("4th");
+		this.option4.sendKeys("c#");
 		driver.switchTo().defaultContent();
 	}
 	
@@ -212,38 +179,38 @@ private WebDriver driver;
 	public void addsecondquestion() {
 		this.multiplechoice.click();
 		this.question.clear();
-		this.question.sendKeys("What is your name?");		
+		this.question.sendKeys("which language are you using in selenium");		
 	}
 	
 	public void secondquestionfirstoption() {
 		driver.switchTo().frame(frame2);
 		this.option1.clear();
-		this.option1.sendKeys("name1");
+		this.option1.sendKeys("python");
 		driver.switchTo().defaultContent();
 	}
 	
 	public void secondquestionsecondoption() {
 		driver.switchTo().frame(frame3);
 		this.option1.clear();
-		this.option1.sendKeys("name2");
+		this.option1.sendKeys("java");
 		driver.switchTo().defaultContent();
 	}
 	
 	public void secondquestionthirdoption() {
 		driver.switchTo().frame(frame4);
 		this.option1.clear();
-		this.option1.sendKeys("name3");
+		this.option1.sendKeys("c");
 		driver.switchTo().defaultContent();
 	}
 	
 	public void secondquestionfourthoption() {
 		driver.switchTo().frame(frame5);
 		this.option1.clear();
-		this.option1.sendKeys("name4");
+		this.option1.sendKeys("c#");
 		driver.switchTo().defaultContent();
 	}
 	
-	@FindBy(xpath="//input[@id='qf_def768']")
+	@FindBy(xpath="//tbody//tr[2]//td[2]//input[1]")
 	private WebElement secondoptionradio;
 	
 	public void selectsecondoptionradio() {
@@ -281,16 +248,8 @@ private WebDriver driver;
 		this.dropdown.click();
 		this.logout.click();
 	}
-	
-	public void loginasstudent() {
-		this.username.clear();
-		this.username.sendKeys("santhosestud");
-		this.password.clear();
-		this.password.sendKeys("santhose");
-		this.login.click();
-	}
-	
-	@FindBy(xpath="//a[@class='btn btn-primary btn-large']")
+
+	@FindBy(xpath="//a[contains(text(),'Course catalog')]")
 	private WebElement coursecatalog;
 	
 	public void clickoncoursecatalog() {
@@ -302,7 +261,7 @@ private WebDriver driver;
 	
 	public void entersearchtext() {
 		this.searchtextbox.clear();
-		this.searchtextbox.sendKeys("Selenium Scripting");
+		this.searchtextbox.sendKeys("Selenium111");
 	}
 	
 	@FindBy(xpath="//button[@type='submit']")
@@ -326,7 +285,7 @@ private WebDriver driver;
 		}
 	}
 	
-	@FindBy(xpath="//a[contains(text(),'Selenium Scripting')]")
+	@FindBy(xpath="//a[contains(text(),'Selenium111')]")
 	private WebElement courselink;
 	
 	public void entercourse() {
@@ -351,31 +310,26 @@ private WebDriver driver;
 		this.starttest.click();
 	}
 	
-	@FindBy(xpath="//p[contains(text(),'ans1')]")
-	private WebElement answerquestion;
-	
-	public void answerquestion() {
-		this.answerquestion.click();
-	}
+	@FindBy(xpath="//p[contains(text(),'selenium')]")
+	private WebElement answerquestion1;
 	
 	@FindBy(xpath="//button[@name='save_now']")
-	private WebElement end;
+	private WebElement nextquestion;
+	
+	@FindBy(xpath="//p[contains(text(),'python')]")
+	private WebElement answerquestion2;
+	
+	public void answerquestion() throws InterruptedException {
+		this.answerquestion1.click();
+		this.nextquestion.click();
+		Thread.sleep(1000);
+		this.answerquestion2.click();
+	}
 	
 	public void endtest() {
-		this.end.click();
+		this.nextquestion.click();
 	}
-	
-	public void loginagainasteacher() throws InterruptedException {
-		this.dropdown.click();
-		this.logout.click();
-		Thread.sleep(2000);
-		this.username.clear();
-		this.username.sendKeys("santeach");
-		this.password.clear();
-		this.password.sendKeys("santhose");
-		this.login.click();
-	
-	}
+
 	
 	@FindBy(xpath="//a[@title='Reporting']")
 	private WebElement reportingicon;
@@ -391,7 +345,7 @@ private WebDriver driver;
 		this.followedstudentsicon.click();
 	}
 	
-	@FindBy(xpath="//img[@title='2rightarrow.png']")
+	@FindBy(xpath="//tbody//tr//td[contains(text(),'Abhi')]//following-sibling::td[contains(text(),'krishnan')]//following-sibling::td[3]//child::img[@title='2rightarrow.png']")
 	private WebElement doublearrow;
 	
 	public void clickonarrow() {
@@ -429,9 +383,6 @@ private WebDriver driver;
 	public void backtocoursepage() {
 		this.courselink.click();
 	}
-	
-	
-	
 	
 }
 	

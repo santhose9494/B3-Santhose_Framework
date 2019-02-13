@@ -78,7 +78,6 @@ public class Createmultipleusers_ELTC_081 {
 	@Test(priority = 3, dataProvider = "excel-inputs", dataProviderClass = LoginDataProviders.class)
 	public void subscribecoursetouser(String userName, String password) {
 		createmultipleusersPOM_ELTC_081.addusertocourse();
-		
 	}
 	
 	
