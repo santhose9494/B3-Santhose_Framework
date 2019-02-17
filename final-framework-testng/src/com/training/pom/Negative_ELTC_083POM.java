@@ -1,24 +1,17 @@
 package com.training.pom;
 
-import java.awt.AWTException;
-import java.awt.Robot;
-import java.awt.event.KeyEvent;
-
-import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.Select;
 
 
-public class CreatemultipleusersPOM_ELTC_081 {
+public class Negative_ELTC_083POM {
 
 private WebDriver driver; 
 	
-	public CreatemultipleusersPOM_ELTC_081(WebDriver driver) {
+	public Negative_ELTC_083POM(WebDriver driver) {
 		this.driver = driver; 
 		PageFactory.initElements(driver, this);
 	}
@@ -127,23 +120,5 @@ private WebDriver driver;
 		this.addcourse.click();
 	}
 		
-	public void selectuser(String firstname, String lastname, String login) throws AWTException {
-		Select userlist = new Select(driver.findElement(By.name("UserList[]")));
-		userlist.selectByVisibleText(lastname  + " " + firstname   +  " " + "(" +login+ ")");
-		Robot rb = new Robot();
-		rb.keyPress(KeyEvent.VK_CONTROL);
-	}
-	
-	public void selectcourse() {
-		Select courselist = new Select(driver.findElement(By.name("CourseList[]")));
-		courselist.selectByVisibleText("(1) CoreJava");
-	}
-	
-	@FindBy(xpath="//button[@value='Add to the course(s) >>']")
-	private WebElement addtothecourse;
-	
-	public void clickonaddtocourse() {
-		this.addtothecourse.click();
-	}
 }
 	

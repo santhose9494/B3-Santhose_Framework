@@ -12,8 +12,8 @@ import org.testng.annotations.BeforeClass;
 
 import org.testng.annotations.Test;
 
-import com.training.dataproviders.LoginDataProviders;
-import com.training.dataproviders.LoginDataProviders2;
+import com.training.dataproviders.LoginDataProviders_Teacher_TC082;
+import com.training.dataproviders.LoginDataProviders_Student_TC082;
 import com.training.generics.ScreenShot;
 import com.training.pom.Endtoend_ELTC_082POM;
 import com.training.pom.LoginPOM;
@@ -48,7 +48,7 @@ public class Endtoendforteacherandstud_ELTC_082 {
 		driver.quit();
 	}
 	
-	@Test(priority = 1, dataProvider = "excel-inputs", dataProviderClass = LoginDataProviders.class)
+	@Test(priority = 1, dataProvider = "excel-inputs", dataProviderClass = LoginDataProviders_Teacher_TC082.class)
 	public void loginasteacher(String userName, String password) {
 		loginPOM.sendUserName(userName);
 		loginPOM.sendPassword(password);
@@ -88,7 +88,7 @@ public class Endtoendforteacherandstud_ELTC_082 {
 		endtoend_ELTC_082POM.logout();	
 	}
 	
-	@Test(priority = 3, dataProvider = "excel-inputs", dataProviderClass = LoginDataProviders2.class)
+	@Test(priority = 3, dataProvider = "excel-inputs", dataProviderClass = LoginDataProviders_Student_TC082.class)
 	public void loginasstudent(String userName, String password) {
 		loginPOM.sendUserName(userName);
 		loginPOM.sendPassword(password);
@@ -111,7 +111,7 @@ public class Endtoendforteacherandstud_ELTC_082 {
 		endtoend_ELTC_082POM.logout();	
 	}
 	
-	@Test(priority = 5, dataProvider = "excel-inputs", dataProviderClass = LoginDataProviders.class)
+	@Test(priority = 5, dataProvider = "excel-inputs", dataProviderClass = LoginDataProviders_Teacher_TC082.class)
 	public void loginagainasteacher(String userName, String password) {
 		loginPOM.sendUserName(userName);
 		loginPOM.sendPassword(password);

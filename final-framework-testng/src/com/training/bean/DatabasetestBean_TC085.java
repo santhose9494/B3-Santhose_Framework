@@ -1,6 +1,6 @@
 package com.training.bean;
 
-public class UserdetailsBean {
+public class DatabasetestBean_TC085 {
 	private String firstname;
 	private String lastname;
 	private String email;
@@ -9,10 +9,10 @@ public class UserdetailsBean {
 	private String password;
 	private String profile;
 
-	public UserdetailsBean() {
+	public DatabasetestBean_TC085() {
 	}
 
-	public UserdetailsBean(String firstname, String lastname, String email, String phone, String login, String password, String profile) {
+	public DatabasetestBean_TC085(String firstname, String lastname, String email, String phone, String login, String password, String profile) {
 		super();
 		this.firstname = firstname;
 		this.lastname = lastname;

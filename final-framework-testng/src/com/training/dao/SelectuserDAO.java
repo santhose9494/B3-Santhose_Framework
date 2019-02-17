@@ -7,16 +7,16 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
 
-import com.training.bean.UserdetailsBean_TC081;
+import com.training.bean.SelectuserBean_TC081;
 import com.training.connection.GetConnection;
 import com.training.utility.LoadDBDetails;
 
 // Data Access Object 
-public class CreatemultipleuserDAO {
+public class SelectuserDAO {
 	
 	Properties properties; 
 	
-	public CreatemultipleuserDAO() {
+	public SelectuserDAO() {
 		 try {
 			properties = new Properties();
 			FileInputStream inStream = new FileInputStream("./resources/sql.properties");
@@ -27,27 +27,23 @@ public class CreatemultipleuserDAO {
 		}
 	}
 	
-	public List<UserdetailsBean_TC081> getLogins(){
+	public List<SelectuserBean_TC081> getLogins(){
 		String sql = properties.getProperty("get.logins"); 
 		
 		GetConnection gc  = new GetConnection(); 
-		List<UserdetailsBean_TC081> list = null;
+		List<SelectuserBean_TC081> list = null;
 		try {
 			gc.ps1 = GetConnection.getMySqlConnection(LoadDBDetails.getDBDetails()).prepareStatement(sql); 
-			list = new ArrayList<UserdetailsBean_TC081>(); 
+			list = new ArrayList<SelectuserBean_TC081>(); 
 			
 			gc.rs1 = gc.ps1.executeQuery(); 
 			
 			while(gc.rs1.next()) {
 			
-				UserdetailsBean_TC081 temp = new UserdetailsBean_TC081(); 
+				SelectuserBean_TC081 temp = new SelectuserBean_TC081(); 
 				temp.setFirstName(gc.rs1.getString(1));
 				temp.setLastName(gc.rs1.getString(2));
-				temp.setEmail(gc.rs1.getString(3));
-				temp.setPhone(gc.rs1.getString(4));
 				temp.setLogin(gc.rs1.getString(5));
-				temp.setPassword(gc.rs1.getString(6));
-				temp.setProfile(gc.rs1.getString(7));
 
 				list.add(temp); 
 				
@@ -60,7 +56,7 @@ public class CreatemultipleuserDAO {
 	}
 	
 	public static void main(String[] args) {
-		new CreatemultipleuserDAO().getLogins().forEach(System.out :: println);
+		new SelectuserDAO().getLogins().forEach(System.out :: println);
 	}
 	
 	

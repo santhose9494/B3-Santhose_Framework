@@ -1,5 +1,6 @@
 package com.training.functional.complex.tests;
 
+import java.awt.AWTException;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Properties;
@@ -12,8 +13,10 @@ import org.testng.annotations.BeforeClass;
 
 import org.testng.annotations.Test;
 
-import com.training.dataproviders.LoginDataProviders;
-import com.training.dataproviders.UserdetailsDataProviders;
+import com.training.dataproviders.LoginDataProviders_TC081;
+import com.training.dataproviders.LoginDataProviders_Teacher_TC082;
+import com.training.dataproviders.SelectusersDataProviders_TC081;
+import com.training.dataproviders.UserdetailsDataProviders_TC081;
 import com.training.generics.ScreenShot;
 import com.training.pom.CreatemultipleusersPOM_ELTC_081;
 import com.training.pom.LoginPOM;
@@ -48,7 +51,7 @@ public class Createmultipleusers_ELTC_081 {
 		driver.quit();
 	}
 
-	@Test(priority = 1, dataProvider = "excel-inputs", dataProviderClass = LoginDataProviders.class)
+	@Test(priority = 1, dataProvider = "excel-inputs", dataProviderClass = LoginDataProviders_TC081.class)
 	public void loginDBTest(String userName, String password) {
 		loginPOM.sendUserName(userName);
 		loginPOM.sendPassword(password);
@@ -56,7 +59,7 @@ public class Createmultipleusers_ELTC_081 {
 		screenShot.captureScreenShot(userName);
 	}
 	
-	@Test(priority = 2, dataProvider = "excel-inputs", dataProviderClass = UserdetailsDataProviders.class)
+	@Test(priority = 2, dataProvider = "excel-inputs", dataProviderClass = UserdetailsDataProviders_TC081.class)
 	public void createuser(String firstname, String lastname, String email, String phone, String login, String password, String profile) throws InterruptedException {
 		createmultipleusersPOM_ELTC_081.administration();
 		createmultipleusersPOM_ELTC_081.adduserlink();
@@ -71,16 +74,20 @@ public class Createmultipleusers_ELTC_081 {
 		createmultipleusersPOM_ELTC_081.profilebtn(profile);
 		createmultipleusersPOM_ELTC_081.addbtn();
 		createmultipleusersPOM_ELTC_081.alertmes();
-		createmultipleusersPOM_ELTC_081.backtoadministration();
-	
 	}
 	
-	@Test(priority = 3, dataProvider = "excel-inputs", dataProviderClass = LoginDataProviders.class)
-	public void subscribecoursetouser(String userName, String password) {
+	@Test(priority = 3)
+	public void clickonaddusertocourse() {
+		createmultipleusersPOM_ELTC_081.backtoadministration();
 		createmultipleusersPOM_ELTC_081.addusertocourse();
 	}
 	
-	
-	
-	
+	@Test(priority = 4, dataProvider = "excel-inputs", dataProviderClass = SelectusersDataProviders_TC081.class)
+		public void assigncoursetocreatedusers(String firstname, String lastname, String login) throws AWTException {
+		createmultipleusersPOM_ELTC_081.selectuser(firstname, lastname, login);
+		createmultipleusersPOM_ELTC_081.selectcourse();
+		createmultipleusersPOM_ELTC_081.clickonaddtocourse();
+	} 
+		
 }
+	

@@ -3,13 +3,13 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.training.functional.complex.tests.Endtoendforteacherandstud_ELTC_082">
+      <class name="com.training.functional.complex.tests.Createmultipleusers_ELTC_081">
         <methods>
-          <include name="setUpBeforeClass"/>
-          <include name="generatereportasteacher"/>
+          <include name="assigncoursetocreatedusers" invocation-numbers="0"/>
           <include name="tearDown"/>
+          <include name="setUpBeforeClass"/>
         </methods>
-      </class> <!-- com.training.functional.complex.tests.Endtoendforteacherandstud_ELTC_082 -->
+      </class> <!-- com.training.functional.complex.tests.Createmultipleusers_ELTC_081 -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

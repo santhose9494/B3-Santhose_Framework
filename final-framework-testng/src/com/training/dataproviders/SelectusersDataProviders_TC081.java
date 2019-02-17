@@ -4,31 +4,25 @@ import java.util.List;
 
 import org.testng.annotations.DataProvider;
 
-
-import com.training.bean.UserdetailsBean;
-import com.training.dao.CreatemultipleuserDAO;
-
+import com.training.bean.SelectuserBean_TC081;
+import com.training.dao.SelectuserDAO;
 import com.training.readexcel.ApachePOIExcelRead;
 import com.training.readexcel.ReadExcel;
 
-public class UserdetailsDataProviders {
+public class SelectusersDataProviders_TC081 {
 
 	@DataProvider(name = "db-inputs")
 	public Object [][] getDBData() {
 
-		List<UserdetailsBean> list = new CreatemultipleuserDAO().getLogins(); 
+		List<SelectuserBean_TC081> list = new SelectuserDAO().getLogins(); 
 		
 		Object[][] result = new Object[list.size()][]; 
 		int count = 0; 
-		for(UserdetailsBean temp : list){
-			Object[]  obj = new Object[7]; 
+		for(SelectuserBean_TC081 temp : list){
+			Object[]  obj = new Object[3]; 
 			obj[0] = temp.getFirstName(); 
 			obj[1] = temp.getLastName();
-			obj[2] = temp.getEmail();
-			obj[3] = temp.getPhone();
-			obj[4] = temp.getLogin();
-			obj[5] = temp.getPassword();
-			obj[6] = temp.getProfile();
+			obj[2] = temp.getLogin();
 			
 					
 			result[count ++] = obj; 
@@ -40,7 +34,7 @@ public class UserdetailsDataProviders {
 	
 	@DataProvider(name = "excel-inputs")
 	public Object[][] getExcelData(){
-		String fileName ="C:\\Users\\SanthoseKumar\\Downloads\\Selenium Live Project\\ELTC_081_Data1.xlsx"; 
+		String fileName ="C:\\Users\\SanthoseKumar\\Downloads\\Selenium Live Project\\selectuser_TC081.xlsx"; 
 		return new ApachePOIExcelRead().getExcelContent(fileName); 
 	}
 	

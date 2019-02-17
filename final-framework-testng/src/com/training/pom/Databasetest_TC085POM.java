@@ -1,24 +1,19 @@
 package com.training.pom;
 
-import java.awt.AWTException;
-import java.awt.Robot;
-import java.awt.event.KeyEvent;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
 
 
-public class CreatemultipleusersPOM_ELTC_081 {
+public class Databasetest_TC085POM {
 
 private WebDriver driver; 
 	
-	public CreatemultipleusersPOM_ELTC_081(WebDriver driver) {
+	public Databasetest_TC085POM(WebDriver driver) {
 		this.driver = driver; 
 		PageFactory.initElements(driver, this);
 	}
@@ -109,29 +104,16 @@ private WebDriver driver;
 		this.add.click();
 	}
 	
-	@FindBy(xpath="//div[@class='alert alert-info']")
-	private WebElement alert;
-	
-	public void alertmes() {
-		System.out.println(this.alert.getText());
-	}
-	
-	public void backtoadministration() {
-		this.administration.click();
-	}
-	
 	@FindBy(xpath="//a[contains(text(),'Add users to course')]")
-	private WebElement addcourse;
+	private WebElement addusertocourse;
 	
-	public void addusertocourse() {
-		this.addcourse.click();
+	public void clickonaddusertocourse() {
+		this.addusertocourse.click();
 	}
-		
-	public void selectuser(String firstname, String lastname, String login) throws AWTException {
+	
+	public void selectuser() {
 		Select userlist = new Select(driver.findElement(By.name("UserList[]")));
-		userlist.selectByVisibleText(lastname  + " " + firstname   +  " " + "(" +login+ ")");
-		Robot rb = new Robot();
-		rb.keyPress(KeyEvent.VK_CONTROL);
+		userlist.selectByVisibleText("xen xavier (xavier)");
 	}
 	
 	public void selectcourse() {
@@ -146,4 +128,3 @@ private WebDriver driver;
 		this.addtothecourse.click();
 	}
 }
-	

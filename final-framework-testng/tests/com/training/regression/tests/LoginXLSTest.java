@@ -13,7 +13,7 @@ import org.testng.annotations.Test;
 
 import com.training.bean.LoginBean;
 import com.training.dao.ELearningDAO;
-import com.training.dataproviders.LoginDataProviders;
+import com.training.dataproviders.LoginDataProviders_Teacher_TC082;
 import com.training.generics.ScreenShot;
 import com.training.pom.LoginPOM;
 import com.training.readexcel.ReadExcel;
@@ -50,7 +50,7 @@ public class LoginXLSTest {
 		driver.quit();
 	}
 
-	@Test(dataProvider = "xls-inputs", dataProviderClass = LoginDataProviders.class)
+	@Test(dataProvider = "xls-inputs", dataProviderClass = LoginDataProviders_Teacher_TC082.class)
 	public void loginDBTest(String userName, String password) {
 		loginPOM.sendUserName(userName);
 		loginPOM.sendPassword(password);
